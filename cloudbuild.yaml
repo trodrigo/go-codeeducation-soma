@@ -1,5 +1,5 @@
 steps:
-
+  
 - id: 'Rodando docker-compose'
   name: 'gcr.io/$PROJECT_ID/docker-compose:1.25.5'
   args: ['-f','docker-compose.cloudbuild.yaml','up','-d']
@@ -11,5 +11,5 @@ steps:
 
 - id: 'go_test'
   name: "gcr.io/cloud-builders/go"
-  args: ["go","go-codeeducation-soma"]
+  args: ["test","go-codeeducation-soma"]
   env: ["GOPATH=."]
