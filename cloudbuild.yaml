@@ -9,11 +9,6 @@ steps:
   args: ["version"]
   env: ["GOPATH=."]
 
-- id: 'go_soma'
-  name: "gcr.io/cloud-builders/go"
-  args: ["run","go-codeeducation-soma"]
-  env: ["GOPATH=."]
-
 - id: 'go_test'
   name: "gcr.io/cloud-builders/go"
   args: ["test","go-codeeducation-soma"]
