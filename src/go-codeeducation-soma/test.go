@@ -4,6 +4,10 @@ import (
 	"testing"
 )
 
+func Soma(a, b int) int {
+	return a + b
+}
+
 func TestSoma(t* testing.T) {
 	result = Soma(2, 2)
 
