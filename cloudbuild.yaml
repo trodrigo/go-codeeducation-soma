@@ -1,8 +1,12 @@
 steps:
   
-- id: 'Rodando docker-compose'
-  name: 'gcr.io/$PROJECT_ID/docker-compose:1.25.5'
-  args: ['-f','docker-compose.yaml','up','--build']
+# - id: 'Rodando docker-compose'
+#   name: 'gcr.io/$PROJECT_ID/docker-compose:1.25.5'
+#   args: ['-f','docker-compose.yaml','up','--build']
+- id: 'Compilando a app'
+  name: 'gcr.io/cloud-builders/go'
+  args: ['install', 'soma']
+  env: ['GOPATH=.']
 
 - id: 'go_version'
   name: "gcr.io/cloud-builders/go"
@@ -14,7 +18,7 @@ steps:
   args: ["test","soma"]
   env: ["GOPATH=."]
 
-  - id: 'Registrando a imagem'
+- id: 'Registrando a imagem'
   name: 'gcr.io/cloud-builders/docker'
   args:
     - 'build'
