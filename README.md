@@ -1,3 +1,1 @@
-Execute o comando abaixo:
-
-docker run trodrigo/codeeducation-soma
+Soma em Go
