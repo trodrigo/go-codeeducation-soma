@@ -13,7 +13,7 @@ steps:
   args: ["version"]
   env: ["GOPATH=."]
 
-- id: 'go_test'
+- id: 'Realizando teste unitário'
   name: "gcr.io/cloud-builders/go"
   args: ["test","soma"]
   env: ["GOPATH=."]
